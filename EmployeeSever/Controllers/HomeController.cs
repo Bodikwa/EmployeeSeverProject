@@ -10,6 +10,7 @@ namespace EmployeeSever.Controllers
         public string Index()
         {
             return "Masedi Pedmond Project Running...";
+
         }
     }
 }

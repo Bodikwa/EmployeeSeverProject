@@ -27,12 +27,11 @@ namespace EmployeeSever
         public void ConfigureServices(IServiceCollection services)
         {
            services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
-            services.AddControllersWithViews().AddNewtonsoftJson();
-           // services.AddCors();
-         
-           //services.AddControllersWithViews()
-           //   .AddNewtonsoftJson()
-           //    .AddXmlDataContractSerializerFormatters();
+            //services.AddControllersWithViews().AddNewtonsoftJson();
+            services.AddCors();
+            services.AddControllersWithViews()
+            .AddNewtonsoftJson()
+             .AddXmlDataContractSerializerFormatters();
 
         }
 
@@ -47,14 +46,17 @@ namespace EmployeeSever
             loggerFactor.AddSerilog();
 
 
+            app.UseCors(builder =>
+            {
+                builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
 
-
-            //app.UseHttpsRedirection();
-            //app.UseStaticFiles();
-
+            app.UseStaticFiles();
             app.UseRouting();
 
-            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
