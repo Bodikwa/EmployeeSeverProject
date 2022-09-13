@@ -27,7 +27,9 @@ namespace EmployeeSever
         public void ConfigureServices(IServiceCollection services)
         {
            services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
+
             //services.AddControllersWithViews().AddNewtonsoftJson();
+
             services.AddCors();
             services.AddControllersWithViews()
             .AddNewtonsoftJson()
