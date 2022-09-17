@@ -1,0 +1,70 @@
+﻿@model Employee
+@{ Layout = "_Layout"; ViewBag.Title = "Add a Employee";}
+
+<h2>Add a Employee <a asp-action="Index" class="btn btn-sm btn-secondary">Back</a></h2>
+
+<form asp-action="AddEmployee">
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="EmployeeId">EmployeeId:</label>
+            <input asp-for="EmployeeId" class="form-control" />
+            <span asp-validation-for="EmployeeId" class="text-danger"></span>
+        </div>
+    <div class="form-group">
+        <label asp-for="EmployeeName">Employee Name:</label>
+        <input asp-for="EmployeeName" class="form-control" />
+        <span asp-validation-for="EmployeeName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EmployeeSurname">Employee Surname:</label>
+        <input asp-for="EmployeeSurname" class="form-control" />
+        <span asp-validation-for="EmployeeSurname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EmployeeEmail">Employee Email:</label>
+        <input asp-for="EmployeeEmail" class="form-control" />
+        <span asp-validation-for="EmployeeEmail" class="text-danger"></span>
+    </div>
+
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Add Employee</button>
+    </div>
+</form>
+<br />
+<br />
+<form asp-action="AddEmployee" method="get">
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary" align="right">Clear Form</button>
+    </div>
+</form>
+
+
+@if (Model != null)
+{
+    <h2>Customer</h2>
+
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr colspan="2">
+                <th>EmployeeId</th>
+                <th>EmployeeName</th>
+                <th>EmployeeSurname</th>
+                <th>EmployeeEmail</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.EmployeeId</td>
+                <td>@Model.EmployeeName</td>
+
+                <td>@Model.EmployeeSurname</td>
+
+                <td>@Model.EmployeeEmail</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="alert-info">Employee Added!!</div>
+}

@@ -96,7 +96,7 @@ namespace EmployeeSever.Repositories
 
                         employee.EmployeeId = Convert.ToInt32(rdr["EmployeeId"]);
                         employee.EmployeeName = rdr["EmployeeName"].ToString();
-                        employee.EmployeeName = rdr["EmployeeName"].ToString();
+                        employee.EmployeeSurname = rdr["EmployeeSurname"].ToString();
                         employee.EmployeeEmail = rdr["EmployeeEmail"].ToString();
                         employees.Add(employee);
 
