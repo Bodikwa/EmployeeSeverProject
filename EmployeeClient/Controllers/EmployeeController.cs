@@ -116,6 +116,7 @@ namespace EmployeeClient.Controllers
         {
             using (var httpClient = new HttpClient())
             {
+              
                 using (var response = await httpClient.DeleteAsync("http://localhost:43224/api/Employee/" + EmployeeId))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();

@@ -1,7 +1,8 @@
 ﻿@model Employee
 @{ Layout = "_Layout"; ViewBag.Title = "Add a Employee";}
 
-<h2>Add a Employee <a asp-action="Index" class="btn btn-sm btn-secondary">Back</a></h2>
+<h2>Add a Employee <a asp-action="Index" 
+ class="btn btn-sm btn-secondary">Back</a></h2>
 
 <form asp-action="AddEmployee">
 
@@ -27,7 +28,6 @@
         <input asp-for="EmployeeEmail" class="form-control" />
         <span asp-validation-for="EmployeeEmail" class="text-danger"></span>
     </div>
-
     <div class="text-center panel-body">
         <button type="submit" class="btn btn-sm btn-primary">Add Employee</button>
     </div>
@@ -39,8 +39,6 @@
         <button type="submit" class="btn btn-sm btn-primary" align="right">Clear Form</button>
     </div>
 </form>
-
-
 @if (Model != null)
 {
     <h2>Customer</h2>
@@ -59,9 +57,7 @@
             <tr>
                 <td>@Model.EmployeeId</td>
                 <td>@Model.EmployeeName</td>
-
                 <td>@Model.EmployeeSurname</td>
-
                 <td>@Model.EmployeeEmail</td>
             </tr>
         </tbody>
